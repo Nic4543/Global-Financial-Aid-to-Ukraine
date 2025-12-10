@@ -17,11 +17,12 @@ A visual representation of which countries are spending the largest percentage o
 
 
 A representation of potential relationships between support levels and geographic distance from Russia.
-##Sourses 
-*Leaflet.js
-*Chroma.js
-*jQuery
-*https://github.com/datasets/geo-countries/blob/main/datapackage.json
-*https://commission.europa.eu/news-and-media/news/eu-reaffirms-unwavering-support-ukraine-anniversary-invasion-2025-02-24_en
-*https://www.kielinstitut.de/publications/ukraine-support-tracker-data-6453/
+## Sources
 
+- Leaflet.js  
+- Chroma.js  
+- jQuery  
+- https://github.com/datasets/geo-countries/blob/main/datapackage.json
+- https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson  
+- https://www.kielinstitut.de/publications/ukraine-support-tracker-data-6453/
+  Article:https://commission.europa.eu/news-and-media/news/eu-reaffirms-unwavering-support-ukraine-anniversary-invasion-2025-02-24_en  
