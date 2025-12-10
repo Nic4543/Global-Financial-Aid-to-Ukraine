@@ -25,4 +25,6 @@ A representation of potential relationships between support levels and geographi
 - https://github.com/datasets/geo-countries/blob/main/datapackage.json
 - https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson  
 - https://www.kielinstitut.de/publications/ukraine-support-tracker-data-6453/
-  Article:https://commission.europa.eu/news-and-media/news/eu-reaffirms-unwavering-support-ukraine-anniversary-invasion-2025-02-24_en  
+
+   Article:https://commission.europa.eu/news-and-media/news/eu-reaffirms-unwavering-support-ukraine-anniversary-invasion-2025-02-24_en  
+
