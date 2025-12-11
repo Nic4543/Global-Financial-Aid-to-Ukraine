@@ -5,7 +5,6 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.7.0/dist/leaflet.css"/>
 
@@ -18,7 +17,6 @@
       background: #f7f7f7;
     }
 
-    /* ===== HEADER BAR ===== */
     header {
       width: 100%;
       background: #003366;
@@ -30,7 +28,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* ===== INTRO / DESCRIPTION BOX ===== */
     .intro-box {
       max-width: 1100px;
       margin: 20px auto 10px auto;
@@ -42,17 +39,15 @@
       font-size: 16px;
     }
 
-    /* ===== MAP AREA ===== */
     #map {
       width: 100%;
-      height: calc(100% - 220px); /* leaves room for header + intro */
+      height: calc(100% - 220px); 
       margin-top: 10px;
     }
 
-    /* ===== FILTER BUTTON GROUP (moves to top left of MAP) ===== */
     .filter-buttons {
       position: absolute;
-      top: 20px;           /* visually below intro box */
+      top: 20px;          
       left: 20px;
       z-index: 9999;
       background: rgba(255,255,255,0.95);
@@ -79,7 +74,6 @@
       border-color: #4a7bd0;
     }
 
-    /* ===== LEGEND ===== */
     .legend {
       z-index: 1000;
       position: absolute;
@@ -118,14 +112,13 @@
   This map displays financial support provided to Ukraine as a percentage of 
   each donating country's 2021 GDP. The data used accounts for money already 
   spent as well as future allocations countries plan to deliver. This covers 
-  financial assistance provided between the dates of 01/24/2022 and 08/31/2025. 
+  financial assistance provided between the dates of 02/24/2022 and 08/31/2025. 
   The figures are representative of total aid provided, including both 
   humanitarian and military, however this “does not include private donations, 
   support for refugees outside of Ukraine and aid by international 
   organizations”.
 </div>
 
-<!-- FILTER BUTTON GROUP (now positioned cleanly at top-left of map) -->
 <div class="filter-buttons">
   <button id="showAll" class="active">All Countries</button>
   <button id="showEU">EU Only</button>
@@ -136,9 +129,7 @@
 <div class="legend"></div>
 
 <script>
-  // ---------------------------------------------------
-  // 1. Map setup
-  // ---------------------------------------------------
+ 
   const map = L.map('map').setView([20, 0], 2);
 
   const baseLayer = L.tileLayer(
@@ -150,9 +141,6 @@
     }
   ).addTo(map);
 
-  // ---------------------------------------------------
-  // 2. EU country names (must match GeoJSON "name")
-  // ---------------------------------------------------
   const EU_COUNTRIES = [
     "Austria","Belgium","Bulgaria","Croatia","Cyprus","Czechia","Denmark",
     "Estonia","Finland","France","Germany","Greece","Hungary","Ireland",
@@ -160,9 +148,6 @@
     "Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden"
   ];
 
-  // ---------------------------------------------------
-  // 3. Helper functions
-  // ---------------------------------------------------
   function getISO3(props) {
     return (
       props.ISO_A3 ||
@@ -192,9 +177,6 @@
 
   let fullLayer, euLayer, nonEuLayer;
 
-  // ---------------------------------------------------
-  // 4. Load data
-  // ---------------------------------------------------
   $.when(
     $.getJSON("assets/countries.geojson"),
     $.getJSON("assets/financial_support_ukraine.json")
@@ -226,9 +208,6 @@
     configureFilterButtons();
   });
 
-  // ---------------------------------------------------
-  // 5. Create filtered layer
-  // ---------------------------------------------------
   function createLayer(geojson, filterFunc) {
     return L.geoJson(geojson, {
       filter: filterFunc,
@@ -259,9 +238,6 @@
     });
   }
 
-  // ---------------------------------------------------
-  // 6. Filter button logic
-  // ---------------------------------------------------
   function configureFilterButtons() {
     const btnAll = document.getElementById("showAll");
     const btnEU = document.getElementById("showEU");
@@ -294,9 +270,6 @@
     layerToAdd.addTo(map);
   }
 
-  // ---------------------------------------------------
-  // 7. Legend
-  // ---------------------------------------------------
   function buildLegend() {
     let html = "";
     for (let i = 0; i < breaks.length - 1; i++) {
@@ -313,3 +286,4 @@
 
 </body>
 </html>
+
